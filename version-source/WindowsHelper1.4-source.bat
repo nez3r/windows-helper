@@ -1,28 +1,11 @@
 @ECHO OFF
-REM BFCPEOPTIONSTART
-REM Advanced BAT to EXE Converter www.BatToExeConverter.com
-REM BFCPEEXE=
-REM BFCPEICON=C:\Users\qwert.ASUSX550\Desktop\All\adv-bat\ab2econv291pro\icons\icon9.ico
-REM BFCPEICONINDEX=1
-REM BFCPEEMBEDDISPLAY=0
-REM BFCPEEMBEDDELETE=1
-REM BFCPEADMINEXE=0
-REM BFCPEINVISEXE=0
-REM BFCPEVERINCLUDE=1
-REM BFCPEVERVERSION=1.4.0.0
-REM BFCPEVERPRODUCT=Windows Helper
-REM BFCPEVERDESC=Windows Helper
-REM BFCPEVERCOMPANY=nez3r
-REM BFCPEVERCOPYRIGHT=nez3r 2025
-REM BFCPEOPTIONEND
-@ECHO ON
-@echo off
+chcp 1451
 color a
 title 
-echo à®¢¥àª  ­ «¨ç¨ï ¯ ¯ª¨ data...
+echo Проверка наличия папки data...
 timeout /t 0 /NOBREAK > nul
 if not exist "data" (
-    echo Žâáãâáâ¢ã¥â ¯ ¯ª  "Data" á ¤ ­­ë¬¨. Error 0x1.
+    echo Отсутствует папка "Data" с данными. Error 0x1.
     pause
     exit /b
 )
@@ -31,26 +14,26 @@ rem tasklist /fi "imagename eq RE3COV3RY.exe" 2>NUL | findstr /i "RE3COV3RY.exe"
 
 
 :main_menu
-:: „®¡à® ¯®¦ à¥­®
+:: Добро пожарено
 cls
 color b
 title Windows Helper 1.4
 echo Ver 1.4: t.me/Nez3rAll
 echo.
-echo „®¡à® ¯®¦ «®¢ âì ¢ ¢®ááâ ­®¢«¥­¨¥ Windows ®â Windows Helper by Nez3r!
-echo —â®¡ë ¢ë¡à âì à §¤¥« ¨«¨ ¢ë¡à âì ¤¥©áâ¢¨¥, ¢¢¥¤¨â¥ ­®¬¥à ¤¥©áâ¢¨ï.
+echo Добро пожаловать в восстановление Windows от Windows Helper by Nez3r!
+echo Чтобы выбрать раздел или выбрать действие, введите номер действия.
 echo.
 
-echo 1 - „¨á¯¥âç¥àë § ¤ ç
-echo 2 - ‘¨áâ¥¬­ë¥ ¤¥©áâ¢¨ï
-echo 3 - à®£à ¬¬ë
-echo 6 - ’¥«¥£ 
+echo 1 - Диспетчеры задач
+echo 2 - Системные действия
+echo 3 - Программы
+echo 6 - Телега
 echo 7 - Changelogs
-echo 8 - ˆ­ä  ® à¥¥áâà¥
-echo 9 - “¤ «¨âì Windows Helper
-echo 0 - ‚ëå®¤
+echo 8 - Инфа о реестре
+echo 9 - Удалить Windows Helper
+echo 0 - Выход
 echo.
-set /p option="®¬¥à="
+set /p option="Номер="
 
 if "%option%"=="1" goto page1
 if "%option%"=="2" goto page2
@@ -65,63 +48,63 @@ goto main_menu
 
 
 :regedit_info
-echo  [1] AppInit_DLLs §­ ç¥­¨ï:
+echo  [1] AppInit_DLLs значения:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v AppInit_DLLs 2>nul
 if %errorlevel% neq 0 (
-    echo ¥ ã¤ «®áì ­ ©â¨ §­ ç¥­¨¥ AppInit_DLLs
+    echo Не удалось найти значение AppInit_DLLs
 )
 
 
-echo  [2] AppInit_DLLs (Wow6432Node) §­ ç¥­¨ï:
+echo  [2] AppInit_DLLs (Wow6432Node) значения:
 reg query "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows" /v AppInit_DLLs 2>nul
 if %errorlevel% neq 0 (
-    echo ¥ ã¤ «®áì ­ ©â¨ §­ ç¥­¨¥ AppInit_DLLs ¢ Wow6432Node
+    echo Не удалось найти значение AppInit_DLLs в Wow6432Node
 )
 
 
-echo  [3] Userinit §­ ç¥­¨ï:
+echo  [3] Userinit значения:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit 2>nul
 if %errorlevel% neq 0 (
-    echo ¥ ã¤ «®áì ­ ©â¨ §­ ç¥­¨¥ Userinit
+    echo Не удалось найти значение Userinit
 )
 
 
-echo  [4] Shell §­ ç¥­¨ï:
+echo  [4] Shell значения:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Shell 2>nul
 if %errorlevel% neq 0 (
-    echo ¥ ã¤ «®áì ­ ©â¨ §­ ç¥­¨¥ Shell
+    echo Не удалось найти значение Shell
 )
 
 
 echo ===============================================
-echo „®¯®«­¨â¥«ì­ ï ¨­ä®à¬ æ¨ï:
+echo Дополнительная информация:
 
-echo AppInit_DLLs - ¡¨¡«¨®â¥ª¨, § £àã¦ ¥¬ë¥ ¯à¨ § ¯ãáª¥ ¯à¨«®¦¥­¨©
-echo Userinit - ¯à®æ¥áá, § ¯ãáª ¥¬ë© ¯à¨ ¢å®¤¥ ¯®«ì§®¢ â¥«ï
-echo Shell - ®¡®«®çª  Windows (®¡ëç­® explorer.exe)
+echo AppInit_DLLs - библиотеки, загружаемые при запуске приложений
+echo Userinit - процесс, запускаемый при входе пользователя
+echo Shell - оболочка Windows (обычно explorer.exe)
 echo ===============================================
 
 
-echo  ¦¬¨â¥ «î¡ãî ª« ¢¨èã ¤«ï ¢ëå®¤  ¢ ¬¥­î...
+echo Нажмите любую клавишу для выхода в меню...
 pause>nul
 goto main_menu
 
 
 :page1
 cls
-echo ‘âà ­¨æ  1. „¨á¯¥âç¥àë § ¤ ç
+echo Страница 1. Диспетчеры задач
 echo.
-echo 1 - Žà¨£¨­ «ì­ë© ¤¨á¯¥âç¥à § ¤ ç
-echo 2 - ‘â àë© ¤¨á¯¥âç¥à § ¤ ç (XP)
+echo 1 - Оригинальный диспетчер задач
+echo 2 - Старый диспетчер задач (XP)
 echo 3 - AnVir Task Manager (Launcher)
 echo 4 - Process Hacker
 echo 5 - Process Hacker x32\x86
 echo 6 - Process Hacker Extreme
 echo 7 - System Informer
 echo 8 - Process Explorer
-echo 0 - ‚¥à­ãâìáï ¢ £« ¢­®¥ ¬¥­î
+echo 0 - Вернуться в главное меню
 echo.
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" start c:\Windows\system32\taskmgr.exe
 if "%option%"=="2" start uAGJcqGpuNpQTx55E6B1v2pCCKVAH6Ah.exe
 if "%option%"=="3" start AnVirTaskMGR\eSJ6jMpURF4q6G8.exe
@@ -135,19 +118,19 @@ goto page1
 
 :page2
 cls
-echo ‘âà ­¨æ  2. ‘¨áâ¥¬­ë¥ ¤¥©áâ¢¨ï
-echo 1 - ‚ëå®¤ ¨§ á¨áâ¥¬ë
-echo 2 - ¥à¥§ £àã§ª  á¨áâ¥¬ë
-echo 3 - ‚ëª«îç¨âì Š
-echo 4 -  §¡«®ª¨à®¢ âì ¢áî á¨áâ¥¬ã (â®«ìª® ¯à¨ à §¡«®ª¨à®¢ ­­®¬ à¥¥áâà¥)
-echo 5 - Žç¨áâ¨âì Debugger (â®«ìª® ¯à¨ à §¡«®ª¨à®¢ ­­®¬ à¥¥áâà¥)
-echo 6 - ‡ ¬¥­¨âì sethc.exe ¨ utilman.exe ­  ª®¬ ­¤­ãî áâà®ªã (â®«ìª® ¯à¨ à §¡«®ª¨à®¢ ­­®¬ à¥¥áâà¥)
-echo 66 - ‚¥à­ãâì sethc.exe ¨ utilman.exe (â®«ìª® ¯à¨ à §¡«®ª¨à®¢ ­­®¬ à¥¥áâà¥)
-echo 7 - ‡ ¯ãáâ¨âì ¬¥­î ¢ë¯®«­¨âì
-echo 8 - ¥áâ ­¤ àâ­ ï ¯ áå «ª 
-echo 0 - ‚¥à­ãâìáï ¢ £« ¢­®¥ ¬¥­î
+echo Страница 2. Системные действия
+echo 1 - Выход из системы
+echo 2 - Перезагрузка системы
+echo 3 - Выключить ПК
+echo 4 - Разблокировать всю систему (только при разблокированном реестре)
+echo 5 - Очистить Debugger (только при разблокированном реестре)
+echo 6 - Заменить sethc.exe и utilman.exe на командную строку (только при разблокированном реестре)
+echo 66 - Вернуть sethc.exe и utilman.exe (только при разблокированном реестре)
+echo 7 - Запустить меню выполнить
+echo 8 - Нестандартная пасхалка
+echo 0 - Вернуться в главное меню
 echo.
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" logoff
 if "%option%"=="2" shutdown /r /t 0
 if "%option%"=="3" shutdown /s /t 0
@@ -156,23 +139,23 @@ if "%option%"=="5" start \Debbuger\9gKcLWS2kK9A0JHFX5hz2BGrbOm3I0h2.exe && reg i
 if "%option%"=="6" start reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v Debugger /t REG_SZ /d "C:\Windows\system32\cmd.exe" /f&&start reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /v Debugger /t REG_SZ /d "C:\Windows\system32\cmd.exe" /f
 if "%option%"=="7" start data\XSoKPZEtpIttYXNMTA266Vrv3tZ35Jcz.exe
 if "%option%"=="8" (
-    echo ã à¥ «ì­® ­¥ ¯à¨¤ã¬ «, ¢®â â ª ï ¯ áå «ª   å å  - t.me/Nez3rAll
+    echo Ну реально не придумал, вот такая пасхалка ахаха - t.me/Nez3rAll
     pause
 )
 if "%option%"=="0" goto main_menu
 if "%option%"=="66" reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v Debugger /f && reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /v Debugger /f
 goto page2
 
-:: ‘âà ­¨æ  3: à®£à ¬¬ë
+:: Страница 3: Программы
 :page3
 cls
-echo ‘âà ­¨æ  3. à®£à ¬¬ë
-echo 1 - €­«®ª¥àë („«ï ®ç¨áâª¨ ¢á¥£® ¯ª, ¨«¨ ¤«ï ã¤ «¥­¨ï ¢¨àãá®¢)
-echo 2 - Š«¨­¥àë („«ï ®ç¨áâª¨ ¯ª ®â ¬ãá®à )
-echo 3 - ” ©«®¢ë¥ ¬¥­¥¤¦¥àë
-echo 0 - ‚ëå®¤ ¢ £« ¢­®¥ ¬¥­î
+echo Страница 3. Программы
+echo 1 - Анлокеры (Для очистки всего пк, или для удаления вирусов)
+echo 2 - Клинеры (Для очистки пк от мусора)
+echo 3 - Файловые менеджеры
+echo 0 - Выход в главное меню
 echo.
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" (goto page3_unlockers)
 if "%option%"=="2" (goto page3_cleaners)
 if "%option%"=="3" (goto page3_filemanagers)
@@ -183,14 +166,14 @@ goto page3
 
 :page3_unlockers
 cls
-echo ‘âà ­¨æ  3.1. €­«®ª¥àë
+echo Страница 3.1. Анлокеры
 echo 1 - SimpleUnlocker (SU)
-echo 2 - Autoruns (¯à®£à ¬¬  ¤«ï â®â «ì­®© ®ç¨áâª¨  ¢â®§ £àã§ª¨)
-echo 3 - RegAlyzer ( «ìâ¥à­ â¨¢  regedit, à ¡®â ¥â ¤ ¦¥ á § ¡«®ª¨à®¢ ­ë¬ à¥¥áâà®¬)
-echo 0 - ‚¥à­ãâìáï ¢ ¬¥­î ¯à®£à ¬¬
+echo 2 - Autoruns (программа для тотальной очистки автозагрузки)
+echo 3 - RegAlyzer (альтернатива regedit, работает даже с заблокированым реестром)
+echo 0 - Вернуться в меню программ
 echo.
 if "%option%" GTR 13 echo lol
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" (start simpleunlocker_release\zXM2wr1596vA6sKO2rCkHABToKBPDwRN.exe)
 if "%option%"=="2" (start Data\Programs\Autoruns\274892095820950.exe)
 if "%option%"=="3" (start data\Programs\RegAlyzer\mSt6XDgnGh6n8f6kq9eYcQ.exe)
@@ -200,12 +183,12 @@ goto page3
 
 :page3_cleaners
 cls
-echo ‘âà ­¨æ  3.2. Š«¨­¥àë
+echo Страница 3.2. Клинеры
 echo 1 - ATFCleaner
 echo 2 - TempCleaner
-echo 0 - ‚¥à­ãâìáï ¢ ¬¥­î ¯à®£à ¬¬
+echo 0 - Вернуться в меню программ
 echo.
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" (start data\Programs\QaZmYgRDetR4sWsxTbE2i85JtkaSpEkG.exe)
 if "%option%"=="2" (start data\Programs\TempCleaner\TempCleaner.exe)
 if "%option%"=="0" goto page3
@@ -214,12 +197,12 @@ goto page3
 
 :page3_filemanagers
 cls
-echo ‘âà ­¨æ  3.3. ” ©«®¢ë¥ ¬¥­¥¤¦¥àë
+echo Страница 3.3. Файловые менеджеры
 echo 1 - Explorer++ (RUS + custom config)
 echo 2 - Far Manager v3.0 build 6575
-echo 0 - ‚¥à­ãâìáï ¢ ¬¥­î ¯à®£à ¬¬
+echo 0 - Вернуться в меню программ
 echo.
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" (start data\Expl++\0ezuGcQHqijp1H3xPI.exe)
 if "%option%"=="2" (start data\FAR\yvrP29YN8p9fzroP0n.exe)
 if "%option%"=="0" goto page3
@@ -229,26 +212,26 @@ goto page3
 
 :page3_backup
 cls
-echo ‘âà ­¨æ  3. à®£à ¬¬ë
-echo  €­«®ª¥àë:
+echo Страница 3. Программы
+echo  Анлокеры:
 echo 1 - SimpleUnlocker (SU)
-echo  Š«¨­¥àë:
+echo  Клинеры:
 echo 2 - ATFCleaner
 echo 3 - TempCleaner
-echo  „àã£®¥:
-echo 4 - Autoruns (¯à®£à ¬¬  ¤«ï â®â «ì­®© ®ç¨áâª¨  ¢â®§ £àã§ª¨)
-echo 5 - Œ®­¨â®à à¥áãàá®¢
-echo 6 - ColorConsole x64 (ª®¬ ­¤­ ï áâà®ª  á ¨­â¥àä¥©á®¬)
-echo 7 - RegAlyzer ( «ìâ¥à­ â¨¢  regedit, à ¡®â ¥â ¤ ¦¥ á § ¡«®ª¨à®¢ ­ë¬ à¥¥áâà®¬
-echo 8 - Defender Killer (¯à®£à ¬¬  ¤«ï ã¤ «¥­¨ï windows defender)
-echo 9 - Run-Command (¯à®£à ¬¬  ¤«ï § ¯ãáª  ¤àã£¨å ¯à®£à ¬¬)
-echo 10 - Qm (¯®çâ )
-echo 11 - Clock (ç áë ¯®¤ ªãàá®à®¬)
-echo 12 - WSMaster (¬ áâ¥à ¤à ©¢¥à®¢ ¨ á¥à¢¨á®¢)
-echo 0 - ‚¥à­ãâìáï ¢ £« ¢­®¥ ¬¥­î
+echo  Другое:
+echo 4 - Autoruns (программа для тотальной очистки автозагрузки)
+echo 5 - Монитор ресурсов
+echo 6 - ColorConsole x64 (командная строка с интерфейсом)
+echo 7 - RegAlyzer (альтернатива regedit, работает даже с заблокированым реестром
+echo 8 - Defender Killer (программа для удаления windows defender)
+echo 9 - Run-Command (программа для запуска других программ)
+echo 10 - Qm (почта)
+echo 11 - Clock (часы под курсором)
+echo 12 - WSMaster (мастер драйверов и сервисов)
+echo 0 - Вернуться в главное меню
 echo.
 if "%option%" GTR 13 echo lol
-set /p option="®¬¥à="
+set /p option="Номер="
 if "%option%"=="1" (start simpleunlocker_release\zXM2wr1596vA6sKO2rCkHABToKBPDwRN.exe)
 if "%option%"=="2" (data\Programs\QaZmYgRDetR4sWsxTbE2i85JtkaSpEkG.exe)
 if "%option%"=="3" (data\Programs\TempCleaner\TempCleaner.exe)
@@ -267,7 +250,7 @@ goto page3
 
 
 :sysinformer
-echo Ž¯à¥¤¥«¥­¨¥  àå¨â¥ªâãàë á¨áâ¥¬ë:
+echo Определение архитектуры системы:
 echo %PROCESSOR_ARCHITECTURE%
 if "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
     start Data\Programs\SystemInformer\amd64\SystemInformer.exe
@@ -275,5 +258,4 @@ if "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
 	start Data\Programs\SystemInformer\I386\SystemInformer.exe
 )
 echo %PROCESSOR_ARCHITECTURE%
-
 goto page1
