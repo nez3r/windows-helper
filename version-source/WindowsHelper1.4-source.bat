@@ -19,10 +19,10 @@ REM BFCPEOPTIONEND
 @echo off
 color a
 title 
-echo Проверка наличия папки data...
+echo ┬П├а┬о┬в┬е├а┬к┬а ┬н┬а┬л┬и├з┬и├п ┬п┬а┬п┬к┬и data...
 timeout /t 0 /NOBREAK > nul
 if not exist "data" (
-    echo Отсутствует папка "Data" с данными. Error 0x1.
+    echo ┼╜├в├б├г├в├б├в┬в├г┬е├в ┬п┬а┬п┬к┬а "Data" ├б ┬д┬а┬н┬н├л┬м┬и. Error 0x1.
     pause
     exit /b
 )
@@ -31,26 +31,26 @@ rem tasklist /fi "imagename eq RE3COV3RY.exe" 2>NUL | findstr /i "RE3COV3RY.exe"
 
 
 :main_menu
-:: Добро пожарено
+:: тАЮ┬о┬б├а┬о ┬п┬о┬ж┬а├а┬е┬н┬о
 cls
 color b
 title Windows Helper 1.4
 echo Ver 1.4: t.me/Nez3rAll
 echo.
-echo Добро пожаловать в восстановление Windows от Windows Helper by Nez3r!
-echo Чтобы выбрать раздел или выбрать действие, введите номер действия.
+echo тАЮ┬о┬б├а┬о ┬п┬о┬ж┬а┬л┬о┬в┬а├в├м ┬в ┬в┬о├б├б├в┬а┬н┬о┬в┬л┬е┬н┬и┬е Windows ┬о├в Windows Helper by Nez3r!
+echo тАФ├в┬о┬б├л ┬в├л┬б├а┬а├в├м ├а┬а┬з┬д┬е┬л ┬и┬л┬и ┬в├л┬б├а┬а├в├м ┬д┬е┬й├б├в┬в┬и┬е, ┬в┬в┬е┬д┬и├в┬е ┬н┬о┬м┬е├а ┬д┬е┬й├б├в┬в┬и├п.
 echo.
 
-echo 1 - Диспетчеры задач
-echo 2 - Системные действия
-echo 3 - Программы
-echo 6 - Телега
+echo 1 - тАЮ┬и├б┬п┬е├в├з┬е├а├л ┬з┬а┬д┬а├з
+echo 2 - тАШ┬и├б├в┬е┬м┬н├л┬е ┬д┬е┬й├б├в┬в┬и├п
+echo 3 - ┬П├а┬о┬г├а┬а┬м┬м├л
+echo 6 - тАЩ┬е┬л┬е┬г┬а
 echo 7 - Changelogs
-echo 8 - Инфа о реестре
-echo 9 - Удалить Windows Helper
-echo 0 - Выход
+echo 8 - ╦Ж┬н├д┬а ┬о ├а┬е┬е├б├в├а┬е
+echo 9 - тАЬ┬д┬а┬л┬и├в├м Windows Helper
+echo 0 - тАЪ├л├е┬о┬д
 echo.
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 
 if "%option%"=="1" goto page1
 if "%option%"=="2" goto page2
@@ -65,63 +65,63 @@ goto main_menu
 
 
 :regedit_info
-echo  [1] AppInit_DLLs значения:
+echo  [1] AppInit_DLLs ┬з┬н┬а├з┬е┬н┬и├п:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows" /v AppInit_DLLs 2>nul
 if %errorlevel% neq 0 (
-    echo Не удалось найти значение AppInit_DLLs
+    echo ┬Н┬е ├г┬д┬а┬л┬о├б├м ┬н┬а┬й├в┬и ┬з┬н┬а├з┬е┬н┬и┬е AppInit_DLLs
 )
 
 
-echo  [2] AppInit_DLLs (Wow6432Node) значения:
+echo  [2] AppInit_DLLs (Wow6432Node) ┬з┬н┬а├з┬е┬н┬и├п:
 reg query "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows" /v AppInit_DLLs 2>nul
 if %errorlevel% neq 0 (
-    echo Не удалось найти значение AppInit_DLLs в Wow6432Node
+    echo ┬Н┬е ├г┬д┬а┬л┬о├б├м ┬н┬а┬й├в┬и ┬з┬н┬а├з┬е┬н┬и┬е AppInit_DLLs ┬в Wow6432Node
 )
 
 
-echo  [3] Userinit значения:
+echo  [3] Userinit ┬з┬н┬а├з┬е┬н┬и├п:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Userinit 2>nul
 if %errorlevel% neq 0 (
-    echo Не удалось найти значение Userinit
+    echo ┬Н┬е ├г┬д┬а┬л┬о├б├м ┬н┬а┬й├в┬и ┬з┬н┬а├з┬е┬н┬и┬е Userinit
 )
 
 
-echo  [4] Shell значения:
+echo  [4] Shell ┬з┬н┬а├з┬е┬н┬и├п:
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Shell 2>nul
 if %errorlevel% neq 0 (
-    echo Не удалось найти значение Shell
+    echo ┬Н┬е ├г┬д┬а┬л┬о├б├м ┬н┬а┬й├в┬и ┬з┬н┬а├з┬е┬н┬и┬е Shell
 )
 
 
 echo ===============================================
-echo Дополнительная информация:
+echo тАЮ┬о┬п┬о┬л┬н┬и├в┬е┬л├м┬н┬а├п ┬и┬н├д┬о├а┬м┬а├ж┬и├п:
 
-echo AppInit_DLLs - библиотеки, загружаемые при запуске приложений
-echo Userinit - процесс, запускаемый при входе пользователя
-echo Shell - оболочка Windows (обычно explorer.exe)
+echo AppInit_DLLs - ┬б┬и┬б┬л┬и┬о├в┬е┬к┬и, ┬з┬а┬г├а├г┬ж┬а┬е┬м├л┬е ┬п├а┬и ┬з┬а┬п├г├б┬к┬е ┬п├а┬и┬л┬о┬ж┬е┬н┬и┬й
+echo Userinit - ┬п├а┬о├ж┬е├б├б, ┬з┬а┬п├г├б┬к┬а┬е┬м├л┬й ┬п├а┬и ┬в├е┬о┬д┬е ┬п┬о┬л├м┬з┬о┬в┬а├в┬е┬л├п
+echo Shell - ┬о┬б┬о┬л┬о├з┬к┬а Windows (┬о┬б├л├з┬н┬о explorer.exe)
 echo ===============================================
 
 
-echo Нажмите любую клавишу для выхода в меню...
+echo ┬Н┬а┬ж┬м┬и├в┬е ┬л├о┬б├г├о ┬к┬л┬а┬в┬и├и├г ┬д┬л├п ┬в├л├е┬о┬д┬а ┬в ┬м┬е┬н├о...
 pause>nul
 goto main_menu
 
 
 :page1
 cls
-echo Страница 1. Диспетчеры задач
+echo тАШ├в├а┬а┬н┬и├ж┬а 1. тАЮ┬и├б┬п┬е├в├з┬е├а├л ┬з┬а┬д┬а├з
 echo.
-echo 1 - Оригинальный диспетчер задач
-echo 2 - Старый диспетчер задач (XP)
+echo 1 - ┼╜├а┬и┬г┬и┬н┬а┬л├м┬н├л┬й ┬д┬и├б┬п┬е├в├з┬е├а ┬з┬а┬д┬а├з
+echo 2 - тАШ├в┬а├а├л┬й ┬д┬и├б┬п┬е├в├з┬е├а ┬з┬а┬д┬а├з (XP)
 echo 3 - AnVir Task Manager (Launcher)
 echo 4 - Process Hacker
 echo 5 - Process Hacker x32\x86
 echo 6 - Process Hacker Extreme
 echo 7 - System Informer
 echo 8 - Process Explorer
-echo 0 - Вернуться в главное меню
+echo 0 - тАЪ┬е├а┬н├г├в├м├б├п ┬в ┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о
 echo.
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" start c:\Windows\system32\taskmgr.exe
 if "%option%"=="2" start uAGJcqGpuNpQTx55E6B1v2pCCKVAH6Ah.exe
 if "%option%"=="3" start AnVirTaskMGR\eSJ6jMpURF4q6G8.exe
@@ -135,19 +135,19 @@ goto page1
 
 :page2
 cls
-echo Страница 2. Системные действия
-echo 1 - Выход из системы
-echo 2 - Перезагрузка системы
-echo 3 - Выключить ПК
-echo 4 - Разблокировать всю систему (только при разблокированном реестре)
-echo 5 - Очистить Debugger (только при разблокированном реестре)
-echo 6 - Заменить sethc.exe и utilman.exe на командную строку (только при разблокированном реестре)
-echo 66 - Вернуть sethc.exe и utilman.exe (только при разблокированном реестре)
-echo 7 - Запустить меню выполнить
-echo 8 - Нестандартная пасхалка
-echo 0 - Вернуться в главное меню
+echo тАШ├в├а┬а┬н┬и├ж┬а 2. тАШ┬и├б├в┬е┬м┬н├л┬е ┬д┬е┬й├б├в┬в┬и├п
+echo 1 - тАЪ├л├е┬о┬д ┬и┬з ├б┬и├б├в┬е┬м├л
+echo 2 - ┬П┬е├а┬е┬з┬а┬г├а├г┬з┬к┬а ├б┬и├б├в┬е┬м├л
+echo 3 - тАЪ├л┬к┬л├о├з┬и├в├м ┬П┼а
+echo 4 - ┬Р┬а┬з┬б┬л┬о┬к┬и├а┬о┬в┬а├в├м ┬в├б├о ├б┬и├б├в┬е┬м├г (├в┬о┬л├м┬к┬о ┬п├а┬и ├а┬а┬з┬б┬л┬о┬к┬и├а┬о┬в┬а┬н┬н┬о┬м ├а┬е┬е├б├в├а┬е)
+echo 5 - ┼╜├з┬и├б├в┬и├в├м Debugger (├в┬о┬л├м┬к┬о ┬п├а┬и ├а┬а┬з┬б┬л┬о┬к┬и├а┬о┬в┬а┬н┬н┬о┬м ├а┬е┬е├б├в├а┬е)
+echo 6 - тАб┬а┬м┬е┬н┬и├в├м sethc.exe ┬и utilman.exe ┬н┬а ┬к┬о┬м┬а┬н┬д┬н├г├о ├б├в├а┬о┬к├г (├в┬о┬л├м┬к┬о ┬п├а┬и ├а┬а┬з┬б┬л┬о┬к┬и├а┬о┬в┬а┬н┬н┬о┬м ├а┬е┬е├б├в├а┬е)
+echo 66 - тАЪ┬е├а┬н├г├в├м sethc.exe ┬и utilman.exe (├в┬о┬л├м┬к┬о ┬п├а┬и ├а┬а┬з┬б┬л┬о┬к┬и├а┬о┬в┬а┬н┬н┬о┬м ├а┬е┬е├б├в├а┬е)
+echo 7 - тАб┬а┬п├г├б├в┬и├в├м ┬м┬е┬н├о ┬в├л┬п┬о┬л┬н┬и├в├м
+echo 8 - ┬Н┬е├б├в┬а┬н┬д┬а├а├в┬н┬а├п ┬п┬а├б├е┬а┬л┬к┬а
+echo 0 - тАЪ┬е├а┬н├г├в├м├б├п ┬в ┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о
 echo.
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" logoff
 if "%option%"=="2" shutdown /r /t 0
 if "%option%"=="3" shutdown /s /t 0
@@ -156,23 +156,23 @@ if "%option%"=="5" start \Debbuger\9gKcLWS2kK9A0JHFX5hz2BGrbOm3I0h2.exe && reg i
 if "%option%"=="6" start reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v Debugger /t REG_SZ /d "C:\Windows\system32\cmd.exe" /f&&start reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /v Debugger /t REG_SZ /d "C:\Windows\system32\cmd.exe" /f
 if "%option%"=="7" start data\XSoKPZEtpIttYXNMTA266Vrv3tZ35Jcz.exe
 if "%option%"=="8" (
-    echo Ну реально не придумал, вот такая пасхалка ахаха - t.me/Nez3rAll
+    echo ┬Н├г ├а┬е┬а┬л├м┬н┬о ┬н┬е ┬п├а┬и┬д├г┬м┬а┬л, ┬в┬о├в ├в┬а┬к┬а├п ┬п┬а├б├е┬а┬л┬к┬а ┬а├е┬а├е┬а - t.me/Nez3rAll
     pause
 )
 if "%option%"=="0" goto main_menu
 if "%option%"=="66" reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v Debugger /f && reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe" /v Debugger /f
 goto page2
 
-:: Страница 3: Программы
+:: тАШ├в├а┬а┬н┬и├ж┬а 3: ┬П├а┬о┬г├а┬а┬м┬м├л
 :page3
 cls
-echo Страница 3. Программы
-echo 1 - Анлокеры (Для очистки всего пк, или для удаления вирусов)
-echo 2 - Клинеры (Для очистки пк от мусора)
-echo 3 - Файловые менеджеры
-echo 0 - Выход в главное меню
+echo тАШ├в├а┬а┬н┬и├ж┬а 3. ┬П├а┬о┬г├а┬а┬м┬м├л
+echo 1 - тВм┬н┬л┬о┬к┬е├а├л (тАЮ┬л├п ┬о├з┬и├б├в┬к┬и ┬в├б┬е┬г┬о ┬п┬к, ┬и┬л┬и ┬д┬л├п ├г┬д┬а┬л┬е┬н┬и├п ┬в┬и├а├г├б┬о┬в)
+echo 2 - ┼а┬л┬и┬н┬е├а├л (тАЮ┬л├п ┬о├з┬и├б├в┬к┬и ┬п┬к ┬о├в ┬м├г├б┬о├а┬а)
+echo 3 - тАЭ┬а┬й┬л┬о┬в├л┬е ┬м┬е┬н┬е┬д┬ж┬е├а├л
+echo 0 - тАЪ├л├е┬о┬д ┬в ┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о
 echo.
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" (goto page3_unlockers)
 if "%option%"=="2" (goto page3_cleaners)
 if "%option%"=="3" (goto page3_filemanagers)
@@ -183,14 +183,14 @@ goto page3
 
 :page3_unlockers
 cls
-echo Страница 3.1. Анлокеры
+echo тАШ├в├а┬а┬н┬и├ж┬а 3.1. тВм┬н┬л┬о┬к┬е├а├л
 echo 1 - SimpleUnlocker (SU)
-echo 2 - Autoruns (программа для тотальной очистки автозагрузки)
-echo 3 - RegAlyzer (альтернатива regedit, работает даже с заблокированым реестром)
-echo 0 - Вернуться в меню программ
+echo 2 - Autoruns (┬п├а┬о┬г├а┬а┬м┬м┬а ┬д┬л├п ├в┬о├в┬а┬л├м┬н┬о┬й ┬о├з┬и├б├в┬к┬и ┬а┬в├в┬о┬з┬а┬г├а├г┬з┬к┬и)
+echo 3 - RegAlyzer (┬а┬л├м├в┬е├а┬н┬а├в┬и┬в┬а regedit, ├а┬а┬б┬о├в┬а┬е├в ┬д┬а┬ж┬е ├б ┬з┬а┬б┬л┬о┬к┬и├а┬о┬в┬а┬н├л┬м ├а┬е┬е├б├в├а┬о┬м)
+echo 0 - тАЪ┬е├а┬н├г├в├м├б├п ┬в ┬м┬е┬н├о ┬п├а┬о┬г├а┬а┬м┬м
 echo.
 if "%option%" GTR 13 echo lol
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" (start simpleunlocker_release\zXM2wr1596vA6sKO2rCkHABToKBPDwRN.exe)
 if "%option%"=="2" (start Data\Programs\Autoruns\274892095820950.exe)
 if "%option%"=="3" (start data\Programs\RegAlyzer\mSt6XDgnGh6n8f6kq9eYcQ.exe)
@@ -200,12 +200,12 @@ goto page3
 
 :page3_cleaners
 cls
-echo Страница 3.2. Клинеры
+echo тАШ├в├а┬а┬н┬и├ж┬а 3.2. ┼а┬л┬и┬н┬е├а├л
 echo 1 - ATFCleaner
 echo 2 - TempCleaner
-echo 0 - Вернуться в меню программ
+echo 0 - тАЪ┬е├а┬н├г├в├м├б├п ┬в ┬м┬е┬н├о ┬п├а┬о┬г├а┬а┬м┬м
 echo.
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" (start data\Programs\QaZmYgRDetR4sWsxTbE2i85JtkaSpEkG.exe)
 if "%option%"=="2" (start data\Programs\TempCleaner\TempCleaner.exe)
 if "%option%"=="0" goto page3
@@ -214,12 +214,12 @@ goto page3
 
 :page3_filemanagers
 cls
-echo Страница 3.3. Файловые менеджеры
+echo тАШ├в├а┬а┬н┬и├ж┬а 3.3. тАЭ┬а┬й┬л┬о┬в├л┬е ┬м┬е┬н┬е┬д┬ж┬е├а├л
 echo 1 - Explorer++ (RUS + custom config)
 echo 2 - Far Manager v3.0 build 6575
-echo 0 - Вернуться в меню программ
+echo 0 - тАЪ┬е├а┬н├г├в├м├б├п ┬в ┬м┬е┬н├о ┬п├а┬о┬г├а┬а┬м┬м
 echo.
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" (start data\Expl++\0ezuGcQHqijp1H3xPI.exe)
 if "%option%"=="2" (start data\FAR\yvrP29YN8p9fzroP0n.exe)
 if "%option%"=="0" goto page3
@@ -229,26 +229,26 @@ goto page3
 
 :page3_backup
 cls
-echo Страница 3. Программы
-echo  Анлокеры:
+echo тАШ├в├а┬а┬н┬и├ж┬а 3. ┬П├а┬о┬г├а┬а┬м┬м├л
+echo  тВм┬н┬л┬о┬к┬е├а├л:
 echo 1 - SimpleUnlocker (SU)
-echo  Клинеры:
+echo  ┼а┬л┬и┬н┬е├а├л:
 echo 2 - ATFCleaner
 echo 3 - TempCleaner
-echo  Другое:
-echo 4 - Autoruns (программа для тотальной очистки автозагрузки)
-echo 5 - Монитор ресурсов
-echo 6 - ColorConsole x64 (командная строка с интерфейсом)
-echo 7 - RegAlyzer (альтернатива regedit, работает даже с заблокированым реестром
-echo 8 - Defender Killer (программа для удаления windows defender)
-echo 9 - Run-Command (программа для запуска других программ)
-echo 10 - Qm (почта)
-echo 11 - Clock (часы под курсором)
-echo 12 - WSMaster (мастер драйверов и сервисов)
-echo 0 - Вернуться в главное меню
+echo  тАЮ├а├г┬г┬о┬е:
+echo 4 - Autoruns (┬п├а┬о┬г├а┬а┬м┬м┬а ┬д┬л├п ├в┬о├в┬а┬л├м┬н┬о┬й ┬о├з┬и├б├в┬к┬и ┬а┬в├в┬о┬з┬а┬г├а├г┬з┬к┬и)
+echo 5 - ┼Т┬о┬н┬и├в┬о├а ├а┬е├б├г├а├б┬о┬в
+echo 6 - ColorConsole x64 (┬к┬о┬м┬а┬н┬д┬н┬а├п ├б├в├а┬о┬к┬а ├б ┬и┬н├в┬е├а├д┬е┬й├б┬о┬м)
+echo 7 - RegAlyzer (┬а┬л├м├в┬е├а┬н┬а├в┬и┬в┬а regedit, ├а┬а┬б┬о├в┬а┬е├в ┬д┬а┬ж┬е ├б ┬з┬а┬б┬л┬о┬к┬и├а┬о┬в┬а┬н├л┬м ├а┬е┬е├б├в├а┬о┬м
+echo 8 - Defender Killer (┬п├а┬о┬г├а┬а┬м┬м┬а ┬д┬л├п ├г┬д┬а┬л┬е┬н┬и├п windows defender)
+echo 9 - Run-Command (┬п├а┬о┬г├а┬а┬м┬м┬а ┬д┬л├п ┬з┬а┬п├г├б┬к┬а ┬д├а├г┬г┬и├е ┬п├а┬о┬г├а┬а┬м┬м)
+echo 10 - Qm (┬п┬о├з├в┬а)
+echo 11 - Clock (├з┬а├б├л ┬п┬о┬д ┬к├г├а├б┬о├а┬о┬м)
+echo 12 - WSMaster (┬м┬а├б├в┬е├а ┬д├а┬а┬й┬в┬е├а┬о┬в ┬и ├б┬е├а┬в┬и├б┬о┬в)
+echo 0 - тАЪ┬е├а┬н├г├в├м├б├п ┬в ┬г┬л┬а┬в┬н┬о┬е ┬м┬е┬н├о
 echo.
 if "%option%" GTR 13 echo lol
-set /p option="Номер="
+set /p option="┬Н┬о┬м┬е├а="
 if "%option%"=="1" (start simpleunlocker_release\zXM2wr1596vA6sKO2rCkHABToKBPDwRN.exe)
 if "%option%"=="2" (data\Programs\QaZmYgRDetR4sWsxTbE2i85JtkaSpEkG.exe)
 if "%option%"=="3" (data\Programs\TempCleaner\TempCleaner.exe)
@@ -267,7 +267,7 @@ goto page3
 
 
 :sysinformer
-echo Определение архитектуры системы:
+echo ┼╜┬п├а┬е┬д┬е┬л┬е┬н┬и┬е ┬а├а├е┬и├в┬е┬к├в├г├а├л ├б┬и├б├в┬е┬м├л:
 echo %PROCESSOR_ARCHITECTURE%
 if "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
     start Data\Programs\SystemInformer\amd64\SystemInformer.exe
@@ -275,4 +275,5 @@ if "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
 	start Data\Programs\SystemInformer\I386\SystemInformer.exe
 )
 echo %PROCESSOR_ARCHITECTURE%
+
 goto page1
