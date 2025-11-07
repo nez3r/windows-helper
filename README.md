@@ -1,6 +1,6 @@
 Windows Helper - это консольная утилита для очистки системы. Программа предоставляет много инструментов для разблокировки компьютера, очистки системы от мусора, удаления вирусов.
 
-![Image alt](https://github.com/nez3r/windows-helper/raw/main/screen.png)
+![Image alt](https://github.com/nez3r/windows-helper/raw/main/images/image.png)
 
 
 Основные возможности:
