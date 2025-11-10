@@ -1,0 +1,2 @@
+1.4.2
+https://github.com/nez3r/windows-helper/releases/download/v1.4.2/winhelper-1.4.2-portable.zip
