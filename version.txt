@@ -1,0 +1,2 @@
+1.4.1
+https://github.com/nez3r/windows-helper/releases/download/v1.4.1/Setup1.4.1.exe
